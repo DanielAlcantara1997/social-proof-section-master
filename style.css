@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+:root {
+  /*Primary*/
+  --very-dark-magenta:hsl(303, 10%, 53%);
+  --soft-pink: hsl(333, 80%, 67%);
+  /*Neutral*/
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  /*Fonts*/
+  --Spartan: 'League Spartan', sans-serif;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+min-width: 375px;
+font-family: var(--Spartan);
+font-size: 0.9375rem;
+}
+article {
+display: grid;
+grid-template-rows: auto auto auto;
+gap: 1.5rem;
+margin: 1.5rem;
+}
+header,section {
+display: flex;
+flex-flow: column nowrap;
+}
+header {	
+text-align: center;
+gap: 20px;
+}
+h1 {
+max-width: 327px;
+font-size: 2.30rem;
+color: var(--very-dark-magenta);
+}
+p {
+color: var(--very-dark-magenta);
+line-height: 1.5rem;
+}
+
+.ratings, .comments {
+list-style-type: none;
+display: grid;
+gap: 0.75rem;
+}
+.ratings > li {
+border-radius: 10px;
+padding: 1rem 0;
+text-align: center;
+background-color: hsla(333, 80%, 67%,0.25);
+}
+.star-rows > img {
+padding: 0 3px;
+margin-bottom: 5px;
+}
+.rated-phrase {
+font-weight: 700;
+}
+
+.comments li {
+border-radius: 10px;
+background-color:hsl(303, 10%, 53%);
+padding: 2rem 1.5rem;
+}
+.flexgroup1 {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 1.5rem;
+}
+.flexgroup1 > img {
+border-radius: 50%;
+height: 2.5rem;
+width: 2.5rem;
+}
+.flexgroup2 {
+display: grid;
+gap: 5px;
+}
+.name, .comment {
+color: #fff;
+}
+.name, .client-type {
+font-weight:700;
+}
+.client-type {
+color: var(--soft-pink);
+}
+
+@media (min-width:1096px) {
+
+header {
+grid-area:header;
+}
+header > h1 {
+text-align: start;
+font-size: 3.2rem;
+}
+header > p {
+text-align: start;
+max-width: 60%;
+}
+
+.ratings-section {grid-area:rs;}
+.ratings > li {
+display: flex;
+flex-flow: row nowrap;
+justify-content: space-around;
+}
+.ratings li:nth-child(1) {
+position:relative; 
+right: 12rem;
+}
+.ratings li:nth-child(2) {
+position:relative; 
+right: 6rem;
+}
+
+.comment-section {padding-top:5rem;grid-area:cs;}
+.comments {
+grid-template-columns: 0.333fr 0.333fr 0.333fr;
+gap: 2rem;
+}
+.comments > li:nth-child(2) { 
+position:relative; 
+top: 2rem;
+}
+.comments > li:nth-child(3) {
+position:relative; 
+top: 4rem;
+}
+
+article {
+margin: 10%;
+grid-template-areas:
+'header rs'
+'cs cs';
+grid-template-columns: 65% 35%;
+}
+
+}
